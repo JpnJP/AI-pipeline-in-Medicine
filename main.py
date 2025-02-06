@@ -278,28 +278,3 @@ if __name__ == '__main__':
 
 
 
-
-
-                                    # Saving performances
-                                    # if os.path.isfile('Models/Performances'+runTurn+'.csv'):
-                                    #     dfPerformance = pd.read_csv('Models/Performances'+runTurn+'.csv')
-                                    #     rowP = dfPerformance.shape[0]
-                                    # else:
-                                    #     dfPerformance = pd.DataFrame()
-                                    #     rowP = 0
-                                    #
-                                    # dfPerformance.loc[rowP, 'Model'] = model_architecture
-                                    # dfPerformance.loc[rowP, 'LossFunction'] = loss_Function
-                                    # dfPerformance.loc[rowP, 'Optimizer'] = optimizerDef
-                                    # dfPerformance.loc[rowP, 'ContrastEnhancement'] = CE
-                                    # dfPerformance.loc[rowP, 'ImageNet'] = pretrained
-                                    # dfPerformance.loc[rowP, 'DataAug'] = dataAugmentation
-
-                                                                        # # Mean Absolute Error
-                                    # dfPerformance.loc[rowP,dataset +'_MAE'] = mean_absolute_error(dfResults.Age.values, dfResults.Estimation.values)
-                                    # # Mean Squared Error
-                                    # dfPerformance.loc[rowP,dataset +'_MSE'] = mean_squared_error(dfResults.Age.values, dfResults.Estimation.values)
-                                    # # Root Mean Squared Error
-                                    # dfPerformance.loc[rowP,dataset +'_RMSE'] = np.sqrt(mean_squared_error(dfResults.Age.values, dfResults.Estimation.values))
-                                    #
-                                    # dfPerformance.to_csv('Models/Performances'+runTurn+'.csv', header=True,index=False)
