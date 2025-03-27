@@ -22,7 +22,6 @@ import pickle
 from RetinalFusionDataset import RetinalFusionDataset
 from Network import networkArchitecture, set_model_gpu_mode, train_model, lossFunction, optimizer
 
-
 print("PyTorch Version: ", torch.__version__)
 print("Torchvision Version: ", torchvision.__version__)
 
@@ -30,22 +29,21 @@ print("Torchvision Version: ", torchvision.__version__)
 
 def main():
     # clinical aim
-    clinicalAims = ['AgePrection', 'DR', 'Glaucoma', ...]
+    clinicalAims = ['AgePrection', 'DR', 'Glaucoma', ...] # List of Aims
 
     # Detect if we have a GPU available
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # dataroot = '/home1/jovanapanic/PreProcessing_Impact/data/preprocessed_images/' # 'preprocessed/SN/' # All IMGS
-    dataroot = 'TrainJP/data/'
+    dataroot = 'data/' # Where all the processed images are
     runTurns = ['FIRST_run', 'SECOND_run', 'THIRD_run']
     epochs = 100
     datasets = ['TR', 'VAL', 'TST']
 
-    model_architectures = ['resnet50', 'swin_base_patch4_window12_384', ...]
+    model_architectures = ['resnet50', 'swin_base_patch4_window12_384', ...] # List of architectures
     pretrained_list = ['ImageNet', 'NoPreTrain']
     dataAugmentation_list = ['NoDataAug', 'DataAug']
-    lossFunctions = ['MAE', 'MSE', 'Huber', 'BinaryCross', ...]
-    contrast_enhancement = ['None', 'CLAHE']  # ,
+    lossFunctions = ['MAE', 'MSE', 'Huber', 'BinaryCross', ...] # List of Loss Functions
+    contrast_enhancement = ['None', 'CLAHE']  # List of Preprocessing approaches applied
 
     num_workers = 8
     learning_rate = 0.001
@@ -140,9 +138,9 @@ def main():
                     }
 
 
-                    for model_architecture in model_architectures:  # model_architecture = model_architectures[0]
-                        for loss_Function in lossFunctions:  # loss_Function = lossFunctions[0]
-                            for runTurn in runTurns: # runTurn = runTurns[0]
+                    for model_architecture in model_architectures:  
+                        for loss_Function in lossFunctions:  
+                            for runTurn in runTurns: 
 
                                 path_save = (saving_path + '/' + preProcess +'/'+model_architecture+'/'
                                             +loss_Function+'/'+pretrained+'/'+dataAugmentation+'/'+runTurn)
